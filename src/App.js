@@ -11,6 +11,7 @@ import Line from "./scenes/line";
 import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+import React from 'react';
 
 function App() {
   const [theme, colorMode] = useMode();

@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -8,6 +8,10 @@ import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
+import BugReportIcon from "@mui/icons-material/BugReport";
+import PolicyIcon from '@mui/icons-material/Policy';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import React from 'react';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -35,6 +39,134 @@ const Dashboard = () => {
         </Box>
       </Box>
 
+      {/* Custom Card */}
+      <Box display="flex"
+            gap="20px"
+      
+      >
+        <Box
+          gridColumn="span 3"
+          gridRow="span 1"
+          width="310px"
+          height="110px"
+          marginBottom="15px"
+          bgcolor={colors.primary[400]}
+          padding="15px"
+          borderRadius="5px"
+          boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+          display="flex"
+          justifyContent="space-between" // Adjusted
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography variant="h6" fontWeight="bold" color={colors.grey[100]}>
+              MALWARE
+            </Typography>
+            <Box display="flex" gap="10px" alignItems="center">
+              <Typography
+                variant="h1"
+                fontWeight="bold"
+                color={colors.grey[100]}
+              >
+                3.21K
+              </Typography>
+              <Typography
+                variant="h4"
+                color={colors.green && colors.green[500]}
+                sx={{ marginLeft: "5px" }}
+              >
+                +8 (24 hours)
+              </Typography>
+            </Box>
+          </div>
+          <BugReportIcon fontSize="large" color="#fffffff" />
+        </Box>
+
+        <Box
+          gridColumn="span 3"
+          gridRow="span 1"
+          width="310px"
+          height="110px"
+          marginBottom="15px"
+          bgcolor={colors.primary[400]}
+          padding="15px"
+          borderRadius="5px"
+          boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+          display="flex"
+          justifyContent="space-between" // Adjusted
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography variant="h6" fontWeight="bold" color={colors.grey[100]}>
+            INDICATORS
+            </Typography>
+            <Box display="flex" gap="10px" alignItems="center">
+              <Typography
+                variant="h1"
+                fontWeight="bold"
+                color={colors.grey[100]}
+              >
+                333.63K
+              </Typography>
+            </Box>
+          </div>
+          <PolicyIcon fontSize="large" color="#fffffff" />
+          
+        </Box>
+
+        <Box
+          gridColumn="span 3"
+          gridRow="span 1"
+          width="310px"
+          height="110px"
+          marginBottom="15px"
+          bgcolor={colors.primary[400]}
+          padding="15px"
+          borderRadius="5px"
+          boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+          display="flex"
+          justifyContent="space-between" // Adjusted
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography variant="h6" fontWeight="bold" color={colors.grey[100]}>
+            REPORTS
+            </Typography>
+            <Box display="flex" gap="10px" alignItems="center">
+              <Typography
+                variant="h1"
+                fontWeight="bold"
+                color={colors.grey[100]}
+              >
+                8.77K
+              </Typography>
+              <Typography
+                variant="h4"
+                color={colors.green && colors.green[500]}
+                sx={{ marginLeft: "5px" }}
+              >
+                +18 (24 hours)
+              </Typography>
+            </Box>
+          </div>
+          <SummarizeIcon fontSize="large" color="#fffffff" />
+        </Box>
+      </Box>
       {/* GRID & CHARTS */}
       <Box
         display="grid"
@@ -42,11 +174,6 @@ const Dashboard = () => {
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* ROW 1 */}
-        
-      
-
-        {/* ROW 2 */}
         <Box
           gridColumn="span 8"
           gridRow="span 2"
@@ -56,9 +183,7 @@ const Dashboard = () => {
             <LineChart isDashboard={true} />
           </Box>
         </Box>
-        
 
-        {/* ROW 3 */}
         <Box
           gridColumn="span 4"
           gridRow="span 2"

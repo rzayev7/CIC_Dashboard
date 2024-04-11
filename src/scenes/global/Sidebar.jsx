@@ -12,6 +12,7 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import React from 'react';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
